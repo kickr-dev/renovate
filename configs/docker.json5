@@ -1,0 +1,20 @@
+// https://docs.renovatebot.com/configuration-options/
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "Update 'ENV' versions in Dockerfile, Containerfile, etc.",
+            "managerFilePatterns": [
+                "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+                "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/"
+            ],
+            "matchStrings": [
+                // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
+                // ENV <text>_VERSION=<currentValue>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\nENV\\s\\S+_VERSION=(?<currentValue>[\\w.+-]+)$/"
+            ]
+        }
+    ]
+}

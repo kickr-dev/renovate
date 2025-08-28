@@ -1,0 +1,55 @@
+// https://docs.renovatebot.com/configuration-options/
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "github-tags",
+            "description": "Update 'uses' versions in GitHub Actions template files",
+            "managerFilePatterns": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?\\.tmpl$/",
+                "/(^|/)action\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "matchStrings": [
+                // uses: <packageName>@<currentValue>
+                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentValue>[\\w.+-]+)$/",
+
+                // uses: <packageName>@<currentDigest> # <currentValue>
+                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$/"
+            ],
+            "versioningTemplate": "semver-coerced"
+        },
+        {
+            "customType": "regex",
+            "datasourceTemplate": "gitlab-tags",
+            "description": "Update 'ref' versions in GitLab CI/CD template files",
+            "managerFilePatterns": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "matchStrings": [
+                // project: <packageName>
+                // ref: <currentValue> (quotes may or may not be there)
+                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*['\"]?(?<currentValue>[\\w.+-]+)['\"]?$/",
+
+                // project: <packageName>
+                // ref: <currentDigest> # <currentValue>
+                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$/"
+            ],
+            "versioningTemplate": "semver-coerced"
+        },
+        {
+            "customType": "regex",
+            "description": "Update 'rev' versions in pre-commit template files",
+            "managerFilePatterns": [
+                "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "matchStrings": [
+                // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional)
+                // rev: <the version>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?\\s*rev:\\s{0,1}(?<currentValue>[\\w.+-]+)$/"
+            ],
+            "versioningTemplate": "semver-coerced"
+        }
+    ]
+}

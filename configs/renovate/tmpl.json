@@ -17,8 +17,7 @@
 
                 // uses: <packageName>@<currentDigest> # <currentValue>
                 "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$/"
-            ],
-            "versioningTemplate": "semver-coerced"
+            ]
         },
         {
             "customType": "regex",
@@ -35,8 +34,7 @@
                 // project: <packageName>
                 // ref: <currentDigest> # <currentValue>
                 "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$/"
-            ],
-            "versioningTemplate": "semver-coerced"
+            ]
         },
         {
             "customType": "regex",
@@ -48,8 +46,7 @@
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional)
                 // rev: <the version>
                 "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?\\s*rev:\\s{0,1}(?<currentValue>[\\w.+-]+)$/"
-            ],
-            "versioningTemplate": "semver-coerced"
+            ]
         }
     ]
 }

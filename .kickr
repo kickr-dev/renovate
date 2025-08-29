@@ -4,6 +4,7 @@ version: 1
 ci:
   provider: github
   options:
+    - codeql
     - harden-runner
     - labeler
   renovate:

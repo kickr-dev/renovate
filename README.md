@@ -10,5 +10,5 @@
 
 Just renovate selfhosted Actions for Kickr.
 
-All renovate configurations are under [configs](./configs/).
+All renovate configurations are under [configs](./configs/renovate/).
 If any needs to be added, or modified, please don't forget to update `kickr` CLI templates update to have them generated depending on each project.

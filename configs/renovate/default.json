@@ -94,7 +94,6 @@
 
                 "/\\.gitlab-ci\\.ya?ml.*?$/"
             ],
-            "pinDigests": true,
             "semanticCommitType": "ci"
         },
         {

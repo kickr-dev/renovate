@@ -60,6 +60,10 @@
 
     "separateMinorPatch": false,
     "separateMultipleMinor": false,
+    "digest": {
+        // disable digest only updates, digest are expected to be updated alongside an associated path, minor or major version
+        "enabled": false
+    },
 
     "configMigration": false, // removes comments and sets indent to 2 and add a lot of newlines (https://github.com/renovatebot/renovate/issues/16359)
 
@@ -94,6 +98,7 @@
 
                 "/\\.gitlab-ci\\.ya?ml.*?$/"
             ],
+            "pinDigests": true,
             "semanticCommitType": "ci"
         },
         {

@@ -3,7 +3,10 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-    "allowedCommands": [ "^\\./scripts/sh/renovate\\.sh$" ],
+    "allowedCommands": [
+        "^\\./scripts/sh/renovate\\.sh$",
+        "^go generate \\./\\.\\.\\.$"
+    ],
     "autodiscover": true,
     "autodiscoverNamespaces": [ "kickr-dev" ]
 }

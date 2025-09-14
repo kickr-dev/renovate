@@ -30,7 +30,9 @@
         {
             // force grouping of go.mod minor versions, even for pre-1.0 versions
             "matchManagers": [ "gomod" ],
-            "matchUpdateTypes": [ "patch", "minor" ]
+            "matchUpdateTypes": [ "patch", "minor" ],
+            "groupName": "Go dependencies (non-major)",
+            "groupSlug": "go-dependencies-non-major"
         }
     ]
 }

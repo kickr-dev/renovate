@@ -3,6 +3,34 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
+    "packageRules": [
+        {
+            "matchFileNames": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?\\.tmpl$/",
+                "/(^|/)action\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "GitHub Actions dependencies",
+            "groupSlug": "github-actions-dependencies",
+            "semanticCommitType": "ci"
+        },
+        {
+            "matchFileNames": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "GitLab CI/CD dependencies",
+            "groupSlug": "gitlabci-dependencies",
+            "semanticCommitType": "ci"
+        },
+        {
+            "matchFileNames": [
+                "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "Pre Commit dependencies",
+            "groupSlug": "pre-commit-dependencies",
+            "semanticCommitType": "ci"
+        }
+    ],
+
     "customManagers": [
         {
             "customType": "regex",

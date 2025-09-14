@@ -3,6 +3,18 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
+    "packageRules": [
+        {
+            "matchManagers": [ "regex" ], // avoid grouping ENV_ updates with FROM updates
+            "matchFileNames": [
+                "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+                "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/"
+            ],
+            "groupName": "Docker dependencies",
+            "groupSlug": "docker-dependencies"
+        }
+    ],
+
     "customManagers": [
         {
             "customType": "regex",

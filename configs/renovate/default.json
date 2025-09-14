@@ -10,11 +10,11 @@
         ":gitSignOff",
         ":ignoreModulesAndTests",
         ":labels(dependencies, renovate)",
-        ":separateMultipleMajorReleases",
         "group:recommended",
         "helpers:pinGitHubActionDigests",
         "mergeConfidence:age-confidence-badges",
         "replacements:all",
+        "security:openssf-scorecard",
         "workarounds:all"
     ],
     "branchPrefix": "renovate/",
@@ -55,10 +55,7 @@
 
     "separateMinorPatch": false,
     "separateMultipleMinor": false,
-    "digest": {
-        // disable digest only updates, digest are expected to be updated alongside an associated path, minor or major version
-        "enabled": false
-    },
+    "separateMultipleMajor": true,
 
     "configMigration": false, // removes comments and sets indent to 2 and add a lot of newlines (https://github.com/renovatebot/renovate/issues/16359)
 
@@ -70,18 +67,7 @@
     "useBaseBranchConfig": "none",
 
     "pre-commit": {
-        "enabled": true,
-        "semanticCommitType": "ci"
-    },
-
-    "github-actions": {
-        "pinDigests": true
-    },
-    "gitlabci": {
-        "pinDigests": true
-    },
-    "gitlabci-include": {
-        "pinDigests": true
+        "enabled": true
     },
 
     "packageRules": [
@@ -97,14 +83,39 @@
             "semanticCommitType": "ci"
         },
         {
-            "matchFileNames": [
-                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml.*?$/",
-                "/(^|/)action\\.ya?ml.*?$/",
-
-                "/\\.gitlab-ci\\.ya?ml.*?$/"
-            ],
-            "groupName": "CI/CD dependencies",
-            "semanticCommitType": "ci"
+            "matchCategories": [ "ci" ],
+            "groupName": "CI dependencies",
+            "groupSlug": "ci-dependencies"
+        },
+        {
+            "matchCategories": [ "cd" ],
+            "groupName": "CD dependencies",
+            "groupSlug": "cd-dependencies"
+        },
+        {
+            "matchCategories": [ "helm" ],
+            "groupName": "Helm dependencies",
+            "groupSlug": "helm-dependencies"
+        },
+        {
+            "matchCategories": [ "kubernetes" ],
+            "groupName": "Kubernetes dependencies",
+            "groupSlug": "kubernetes-dependencies"
+        },
+        {
+            "matchCategories": [ "docker" ],
+            "groupName": "Docker dependencies",
+            "groupSlug": "docker-dependencies"
+        },
+        {
+            "matchCategories": [ "pre-commit" ],
+            "groupName": "Pre Commit dependencies",
+            "groupSlug": "pre-commit-dependencies"
+        },
+        {
+            "matchCategories": [ "terraform" ],
+            "groupName": "Terraform dependencies",
+            "groupSlug": "terraform-dependencies"
         },
         {
             "addLabels": [ "non-major" ],

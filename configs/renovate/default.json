@@ -103,6 +103,7 @@
 
                 "/\\.gitlab-ci\\.ya?ml.*?$/"
             ],
+            "groupName": "CI/CD dependencies",
             "semanticCommitType": "ci"
         },
         {

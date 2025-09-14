@@ -74,6 +74,16 @@
         "semanticCommitType": "ci"
     },
 
+    "github-actions": {
+        "pinDigests": true
+    },
+    "gitlabci": {
+        "pinDigests": true
+    },
+    "gitlabci-include": {
+        "pinDigests": true
+    },
+
     "packageRules": [
         {
             "matchCategories": [
@@ -93,7 +103,6 @@
 
                 "/\\.gitlab-ci\\.ya?ml.*?$/"
             ],
-            "pinDigests": true,
             "semanticCommitType": "ci"
         },
         {

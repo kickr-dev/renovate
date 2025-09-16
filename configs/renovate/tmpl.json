@@ -5,6 +5,31 @@
 
     "packageRules": [
         {
+            "matchFileNames": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?\\.tmpl$/",
+                "/(^|/)action\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "GitHub Actions dependencies",
+            "groupSlug": "github-actions-dependencies",
+            "semanticCommitType": "chore"
+        },
+        {
+            "matchFileNames": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "GitLab CI/CD dependencies",
+            "groupSlug": "gitlabci-dependencies",
+            "semanticCommitType": "chore"
+        },
+        {
+            "matchFileNames": [
+                "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?\\.tmpl$/"
+            ],
+            "groupName": "Pre Commit dependencies",
+            "groupSlug": "pre-commit-dependencies",
+            "semanticCommitType": "chore"
+        },
+        {
             "matchManagers": [ "regex" ],
             "matchFileNames": [
                 "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",

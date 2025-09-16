@@ -6,7 +6,6 @@ ci:
   options:
     - codeql
     - harden-runner
-    - labeler
   renovate:
     auth: github-app
 dependencies:

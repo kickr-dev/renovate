@@ -9,12 +9,6 @@
         "gomodUpdateImportPaths"
     ],
 
-    "postUpgradeTasks": {
-        "commands": [ "go generate ./..." ],
-        "executionMode": "branch",
-        "fileFilters": [ "go.mod" ]
-    },
-
     "ignorePaths": [
         "**/testdata/**"
     ],

@@ -66,6 +66,10 @@
     "updateLockFiles": true,
     "useBaseBranchConfig": "none",
 
+    "digest": {
+        "enabled": false
+    },
+
     "packageRules": [
         {
             "matchCategories": [

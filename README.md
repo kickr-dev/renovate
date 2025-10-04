@@ -4,7 +4,7 @@
   <img alt="GitHub Release" src="https://img.shields.io/github/v/release/kickr-dev/renovate?include_prereleases&sort=semver&style=for-the-badge">
   <img alt="GitHub Issues" src="https://img.shields.io/github/issues-raw/kickr-dev/renovate?style=for-the-badge">
   <img alt="GitHub License" src="https://img.shields.io/github/license/kickr-dev/renovate?style=for-the-badge">
-  <img alt="GitHub Actions" src="https://img.shields.io/github/actions/workflow/status/kickr-dev/renovate/integration.yml?style=for-the-badge">
+  <img alt="GitLab CICD" src="https://img.shields.io/gitlab/pipeline-status/kickr-dev%2Frenovate?gitlab_url=https%3A%2F%gitlab.com&branch=main&style=for-the-badge">
 </p>
 
 ---

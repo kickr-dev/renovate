@@ -6,8 +6,7 @@ ci:
   options:
     - codeql
     - harden-runner
-  renovate:
-    auth: github-app
+    - renovate:github-app
 dependencies:
   manager: renovate
 exclude:
@@ -16,3 +15,6 @@ license: mit
 maintainers:
   - name: kilianpaquier
 platform: github
+pre-commit:
+  - conventional-branches
+  - conventional-commits

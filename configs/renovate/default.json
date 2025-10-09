@@ -137,11 +137,7 @@
             "semanticCommitType": "ci"
         },
         {
-            "addLabels": [ "non-major" ],
-            "matchUpdateTypes": [ "!major" ]
-        },
-        {
-            "addLabels": [ "major" ],
+            "addLabels": [ "breaking" ],
             "matchUpdateTypes": [ "major" ]
         },
         {

@@ -25,6 +25,8 @@
             "matchDepNames": [ "go" ],
             "matchDepTypes": [ "toolchain" ],
             "matchManagers": [ "gomod" ],
+            "groupName": "Go toolchain dependency",
+            "groupSlug": "toolchain-dependency",
             "semanticCommitType": "ci"
         },
         {

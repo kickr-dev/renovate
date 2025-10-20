@@ -6,6 +6,7 @@ ci:
   options:
     - codeql
     - harden-runner
+    - kickr:github-app
     - renovate:github-app
 dependencies:
   manager: renovate

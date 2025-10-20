@@ -1,0 +1,30 @@
+// https://docs.renovatebot.com/configuration-options/
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "packageRules": [
+        {
+            "matchFileNames": [
+                "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "groupName": "Pre Commit dependencies",
+            "groupSlug": "pre-commit-dependencies"
+        }
+    ],
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "Update 'rev' versions in pre-commit template files",
+            "managerFilePatterns": [
+                "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional)
+                // rev: <the version>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?\\s*rev:\\s{0,1}(?<currentValue>[\\w.+-]+)\\n"
+            ]
+        }
+    ]
+}

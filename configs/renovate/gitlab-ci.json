@@ -1,0 +1,42 @@
+// https://docs.renovatebot.com/configuration-options/
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "gitlabci": {
+        "enabled": false
+    },
+    "gitlabci-include": {
+        "enabled": false
+    },
+
+    "packageRules": [
+        {
+            "matchFileNames": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "groupName": "GitLab CI/CD dependencies",
+            "groupSlug": "gitlabci-dependencies"
+        }
+    ],
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "gitlab-tags",
+            "description": "Update 'ref' versions in GitLab CI/CD template files",
+            "managerFilePatterns": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // project: <packageName>
+                // ref: <currentDigest> # <currentValue>
+                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\\n",
+
+                // project: <packageName>
+                // ref: <currentValue> (quotes may or may not be there)
+                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*['\"]?(?<currentValue>[\\w.+-]+)['\"]?\\n"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+// https://docs.renovatebot.com/configuration-options/
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "github-actions": {
+        "enabled": false
+    },
+
+    "packageRules": [
+        {
+            "enabled": false,
+            "matchDepTypes": [ "uses-with" ]
+        },
+        {
+            "matchFileNames": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/(^|/)action\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "groupName": "GitHub Actions dependencies",
+            "groupSlug": "github-actions-dependencies"
+        }
+    ],
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "datasourceTemplate": "github-tags",
+            "description": "Update 'uses' versions in GitHub Actions template files",
+            "managerFilePatterns": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/(^|/)action\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // uses: <packageName>@<currentDigest> # <currentValue>
+                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\\n",
+
+                // uses: <packageName>@<currentValue>
+                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentValue>[\\w.+-]+)\\n"
+            ]
+        }
+    ]
+}

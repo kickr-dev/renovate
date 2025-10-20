@@ -102,47 +102,13 @@
             "groupSlug": "kubernetes-dependencies"
         },
         {
-            "matchCategories": [ "docker" ],
-            "groupName": "Docker dependencies",
-            "groupSlug": "docker-dependencies"
-        },
-        {
             "matchCategories": [ "terraform" ],
             "groupName": "Terraform dependencies",
             "groupSlug": "terraform-dependencies"
         },
         {
-            "matchFileNames": [
-                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
-                "/(^|/)action\\.ya?ml$/"
-            ],
-            "groupName": "GitHub Actions dependencies",
-            "groupSlug": "github-actions-dependencies",
-            "semanticCommitType": "ci"
-        },
-        {
-            "matchFileNames": [
-                "/\\.gitlab-ci\\.ya?ml$/"
-            ],
-            "groupName": "GitLab CI/CD dependencies",
-            "groupSlug": "gitlabci-dependencies",
-            "semanticCommitType": "ci"
-        },
-        {
-            "matchFileNames": [
-                "/(^|/)\\.pre-commit-config\\.ya?ml$/"
-            ],
-            "groupName": "Pre Commit dependencies",
-            "groupSlug": "pre-commit-dependencies",
-            "semanticCommitType": "ci"
-        },
-        {
             "addLabels": [ "breaking" ],
             "matchUpdateTypes": [ "major" ]
-        },
-        {
-            "enabled": false,
-            "matchDepTypes": [ "uses-with" ]
         }
     ],
 

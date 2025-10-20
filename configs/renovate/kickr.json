@@ -1,0 +1,20 @@
+// https://docs.renovatebot.com/configuration-options/
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "packageRules": [
+        {
+            "matchManagers": [ "regex" ],
+            "matchFileNames": [
+                "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
+                "/(^|/)action\\.ya?ml$/",
+
+                "/\\.gitlab-ci\\.ya?ml$/",
+
+                "/(^|/)\\.pre-commit-config\\.ya?ml$/"
+            ],
+            "enabled": false // disable regex manager for tmpl associated files
+        }
+    ]
+}

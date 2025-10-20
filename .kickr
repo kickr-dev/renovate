@@ -16,5 +16,5 @@ maintainers:
   - name: kilianpaquier
 platform: github
 pre-commit:
-  - conventional-branches
   - conventional-commits
+  - gitflow-branches

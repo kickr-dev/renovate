@@ -16,7 +16,8 @@
                 "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "GitLab CI/CD dependencies",
-            "groupSlug": "gitlabci-dependencies"
+            "groupSlug": "gitlabci-dependencies",
+            "semanticCommitType": "ci"
         }
     ],
 

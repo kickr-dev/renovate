@@ -18,7 +18,8 @@
                 "/(^|/)action\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "GitHub Actions dependencies",
-            "groupSlug": "github-actions-dependencies"
+            "groupSlug": "github-actions-dependencies",
+            "semanticCommitType": "ci"
         }
     ],
 

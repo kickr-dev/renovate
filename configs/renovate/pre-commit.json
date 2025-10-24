@@ -9,7 +9,8 @@
                 "/(^|/)\\.pre-commit-config\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "Pre Commit dependencies",
-            "groupSlug": "pre-commit-dependencies"
+            "groupSlug": "pre-commit-dependencies",
+            "semanticCommitType": "ci"
         }
     ],
 

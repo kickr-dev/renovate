@@ -28,7 +28,7 @@
             "groupName": "Go dependencies",
             "groupSlug": "go-dependencies"
         },
-                {
+        {
             "matchDepNames": [ "go" ],
             "matchDepTypes": [ "toolchain" ],
             "matchManagers": [ "gomod" ],

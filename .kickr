@@ -8,6 +8,8 @@ ci:
     - harden-runner
     - kickr:github-app
     - renovate:github-app
+  release:
+    auth: github-token
 dependencies:
   manager: renovate
 exclude:
@@ -18,4 +20,3 @@ maintainers:
 platform: github
 pre-commit:
   - conventional-commits
-  - gitflow-branches

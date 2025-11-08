@@ -107,7 +107,7 @@
             "groupSlug": "terraform-dependencies"
         },
         {
-            "addLabels": [ "breaking" ],
+            "addLabels": [ "major" ],
             "matchUpdateTypes": [ "major" ]
         }
     ],

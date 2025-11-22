@@ -9,10 +9,6 @@
         "gomodUpdateImportPaths"
     ],
 
-    "ignorePaths": [
-        "**/testdata/**"
-    ],
-
     "packageRules": [
         {
             // block all updates on "go" directive in go.mod (but not "toolchain" directive)

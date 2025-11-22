@@ -13,7 +13,8 @@
     "packageRules": [
         {
             "matchFileNames": [
-                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "GitLab CI/CD dependencies",
             "groupSlug": "gitlabci-dependencies",
@@ -27,7 +28,8 @@
             "datasourceTemplate": "gitlab-tags",
             "description": "Update 'ref' versions in GitLab CI/CD template files",
             "managerFilePatterns": [
-                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "matchStrings": [
                 // project: <packageName>

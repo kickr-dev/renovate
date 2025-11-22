@@ -5,7 +5,7 @@
 
     "packageRules": [
         {
-            "matchManagers": [ "regex" ],
+            "matchManagers": ["regex"],
             "matchFileNames": [
                 "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
                 "/(^|/)action\\.ya?ml$/",

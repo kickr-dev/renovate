@@ -3,7 +3,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-    "goGetDirs": [ "./..." ],
+    "goGetDirs": ["./..."],
     "postUpdateOptions": [
         "gomodTidy",
         "gomodUpdateImportPaths"
@@ -13,21 +13,21 @@
         {
             // block all updates on "go" directive in go.mod (but not "toolchain" directive)
             "enabled": false,
-            "matchDepNames": [ "go" ],
-            "matchDepTypes": [ "golang" ],
-            "matchManagers": [ "gomod" ]
+            "matchDepNames": ["go"],
+            "matchDepTypes": ["golang"],
+            "matchManagers": ["gomod"]
         },
         {
             // force grouping of go.mod minor versions, even for pre-1.0 versions
-            "matchManagers": [ "gomod" ],
-            "matchUpdateTypes": [ "!major" ],
+            "matchManagers": ["gomod"],
+            "matchUpdateTypes": ["!major"],
             "groupName": "Go dependencies",
             "groupSlug": "go-dependencies"
         },
         {
-            "matchDepNames": [ "go" ],
-            "matchDepTypes": [ "toolchain" ],
-            "matchManagers": [ "gomod" ],
+            "matchDepNames": ["go"],
+            "matchDepTypes": ["toolchain"],
+            "matchManagers": ["gomod"],
             "groupName": "Go toolchain dependency",
             "groupSlug": "toolchain-dependency",
             "semanticCommitType": "ci"

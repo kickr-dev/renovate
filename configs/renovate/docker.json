@@ -5,7 +5,7 @@
 
     "packageRules": [
         {
-            "matchManagers": [ "regex" ], // avoid grouping ENV_ updates with FROM updates
+            "matchManagers": ["regex"], // avoid grouping ENV_ updates with FROM updates
             "matchFileNames": [
                 "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
                 "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/"

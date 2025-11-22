@@ -10,7 +10,7 @@
     "packageRules": [
         {
             "enabled": false,
-            "matchDepTypes": [ "uses-with" ]
+            "matchDepTypes": ["uses-with"]
         },
         {
             "matchFileNames": [

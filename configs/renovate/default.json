@@ -82,33 +82,33 @@
             "semanticCommitType": "ci"
         },
         {
-            "matchCategories": [ "ci" ],
+            "matchCategories": ["ci"],
             "groupName": "CI dependencies",
             "groupSlug": "ci-dependencies"
         },
         {
-            "matchCategories": [ "cd" ],
+            "matchCategories": ["cd"],
             "groupName": "CD dependencies",
             "groupSlug": "cd-dependencies"
         },
         {
-            "matchCategories": [ "helm" ],
+            "matchCategories": ["helm"],
             "groupName": "Helm dependencies",
             "groupSlug": "helm-dependencies"
         },
         {
-            "matchCategories": [ "kubernetes" ],
+            "matchCategories": ["kubernetes"],
             "groupName": "Kubernetes dependencies",
             "groupSlug": "kubernetes-dependencies"
         },
         {
-            "matchCategories": [ "terraform" ],
+            "matchCategories": ["terraform"],
             "groupName": "Terraform dependencies",
             "groupSlug": "terraform-dependencies"
         },
         {
-            "addLabels": [ "major" ],
-            "matchUpdateTypes": [ "major" ]
+            "addLabels": ["major"],
+            "matchUpdateTypes": ["major"]
         }
     ],
 

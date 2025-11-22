@@ -7,6 +7,6 @@
         "^\\./scripts/sh/renovate\\.sh$"
     ],
     "autodiscover": true,
-    "autodiscoverNamespaces": [ "kickr-dev" ],
+    "autodiscoverNamespaces": ["kickr-dev"],
     "onboarding": false
 }

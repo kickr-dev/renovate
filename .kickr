@@ -14,6 +14,6 @@ exclude:
 license: mit
 maintainers:
   - name: kilianpaquier
-platform: github
+platform: gitlab
 pre-commit:
   - conventional-commits

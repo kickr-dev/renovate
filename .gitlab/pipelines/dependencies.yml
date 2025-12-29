@@ -7,11 +7,10 @@ include:
   - project: to-be-continuous/renovate
     ref: 9b2d7f51d4c059b28e5c8e72a4eb5d21e34887d5 # 1.12.1
     file: templates/gitlab-ci-renovate.yml
-
 variables:
   RENOVATE_CONFIG_FILE: .gitlab/renovate.json
   RENOVATE_ENDPOINT: "" # force empty endpoint to let Renovate choose with RENOVATE_PLATFORM (or server configuration platform)
-  RENOVATE_PLATFORM: github
+  RENOVATE_PLATFORM: gitlab
 
 .renovate-rules: &renovate-rules
   rules:

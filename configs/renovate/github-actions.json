@@ -27,7 +27,7 @@
         {
             "customType": "regex",
             "datasourceTemplate": "github-tags",
-            "description": "Update 'uses' versions in GitHub Actions template files",
+            "description": "Update 'uses' versions in GitHub Actions files",
             "managerFilePatterns": [
                 "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
                 "/(^|/)action\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"

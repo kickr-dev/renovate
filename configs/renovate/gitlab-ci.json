@@ -25,8 +25,22 @@
     "customManagers": [
         {
             "customType": "regex",
+            "datasourceTemplate": "docker",
+            "description": "Update docker versions in GitLab CI/CD files",
+            "managerFilePatterns": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // <text>: <packageName>/<depName>:<currentValue>
+                "\\S+:\\s{0,1}(?<packageName>\\S+\\/(?<depName>\\S+)):(?<currentValue>[\\w.+-]+)\\n"
+            ],
+            "versioningTemplate": "docker"
+        },
+        {
+            "customType": "regex",
             "datasourceTemplate": "gitlab-tags",
-            "description": "Update 'ref' versions in GitLab CI/CD template files",
+            "description": "Update 'ref' versions in GitLab CI/CD files",
             "managerFilePatterns": [
                 "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
                 "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"

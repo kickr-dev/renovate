@@ -122,7 +122,11 @@
             "matchStrings": [
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
                 // <text>: <currentValue>
-                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s*\\S+:\\s{0,1}(?<currentValue>[\\w.+-]+)\\n"
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s*\\S+:\\s{0,1}(?<currentValue>[\\w.+-]+)\\n",
+
+                // renovate: datasource=<datasource> packageName=<packageName> (versioning=<versioning>, i.e. optional)
+                // <anything> <depName>@<currentValue>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sversioning=(?<versioning>\\S+))?\\s*(?:-\\s)?.+\\s(?<depName>\\S+)@(?<currentValue>[\\w.+-]+)\\n"
             ]
         }
     ]

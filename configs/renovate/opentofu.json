@@ -20,10 +20,15 @@
         {
             "customType": "regex",
             "datasourceTemplate": "github-releases",
-            "depNameTemplate": "opentofu/opentofu",
+            "packageNameTemplate": "opentofu/opentofu",
+            "depNameTemplate": "opentofu",
             "description": "Update opentofu version at 'required_version' in versions.tf files",
-            "managerFilePatterns": ["(^|/)versions.tf$/"],
-            "matchStrings": ["required_version\\s=\\s\"(?<currentValue>[\\w.+-]+)\""]
+            "managerFilePatterns": [
+                "(^|/)versions.tf$/"
+            ],
+            "matchStrings": [
+                "required_version\\s=\\s\"(?<currentValue>.+)\""
+            ]
         }
     ]
 }

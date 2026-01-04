@@ -6,13 +6,14 @@
 
     "packageRules": [
         {
-            "matchDatasources": ["github-releases"],
-            "matchDepNames": ["hashicorp/terraform"],
-            "enabled": false
+            "enabled": false,
+            "matchDepTypes": ["required_version"],
+            "matchPackageNames": ["hashicorp/terraform"]
         },
         {
             "matchDatasources": ["terraform-provider", "terraform-module"],
-            "registryUrls": ["https://registry.opentofu.org"]
+            "registryUrls": ["https://registry.opentofu.org"],
+            "semanticCommitType": "chore"
         }
     ],
 

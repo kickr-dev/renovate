@@ -7,8 +7,6 @@ ci:
     - kickr
     - renovate
   release: {}
-dependencies:
-  manager: renovate
 exclude:
   - makefile
 license: mit

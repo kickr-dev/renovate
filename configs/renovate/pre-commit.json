@@ -24,7 +24,7 @@
             "matchStrings": [
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional)
                 // rev: <the version>
-                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?\\s*rev:\\s{0,1}(?<currentValue>[\\w.+-]+)\\n"
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?\\s+rev:\\s(?<currentValue>[\\w.+-]+)$"
             ]
         }
     ]

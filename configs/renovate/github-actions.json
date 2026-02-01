@@ -34,10 +34,10 @@
             ],
             "matchStrings": [
                 // uses: <packageName>@<currentDigest> # <currentValue>
-                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\\n",
+                "uses:\\s(?<packageName>[^@\\s'\"]+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$",
 
                 // uses: <packageName>@<currentValue>
-                "uses:\\s*(?<packageName>[^@\\s'\"]+)@(?<currentValue>[\\w.+-]+)\\n"
+                "uses:\\s(?<packageName>[^@\\s'\"]+)@(?<currentValue>[\\w.+-]+)$"
             ]
         }
     ]

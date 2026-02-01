@@ -26,7 +26,7 @@
             "matchStrings": [
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
                 // ENV <text>_VERSION=<currentValue>
-                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\nENV\\s\\S+_VERSION=(?<currentValue>[\\w.+-]+)\\n"
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+ENV\\s\\S+_VERSION=(?<currentValue>[\\w.+-]+)$"
             ]
         }
     ]

@@ -33,7 +33,7 @@
             ],
             "matchStrings": [
                 // <text>: <packageName>/<depName>:<currentValue>
-                "\\S+:\\s{0,1}(?<packageName>\\S+\\/(?<depName>\\S+)):(?<currentValue>[\\w.+-]+)\\n"
+                "\\S+:\\s(?<packageName>\\S+\\/(?<depName>\\S+)):(?<currentValue>[\\w.+-]+)$"
             ],
             "versioningTemplate": "docker"
         },
@@ -48,11 +48,11 @@
             "matchStrings": [
                 // project: <packageName>
                 // ref: <currentDigest> # <currentValue>
-                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\\n",
+                "project:\\s(?<packageName>\\S+)\\s+ref:\\s(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$",
 
                 // project: <packageName>
                 // ref: <currentValue> (quotes may or may not be there)
-                "project:\\s*(?<packageName>\\S+)\\s*ref:\\s*['\"]?(?<currentValue>[\\w.+-]+)['\"]?\\n"
+                "project:\\s(?<packageName>\\S+)\\s+ref:\\s['\"]?(?<currentValue>[\\w.+-]+)['\"]?$"
             ]
         }
     ]

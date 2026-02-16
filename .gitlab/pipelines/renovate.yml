@@ -11,7 +11,6 @@ include:
 variables:
   RENOVATE_CONFIG_FILE: .gitlab/renovate.json
   RENOVATE_ENDPOINT: "" # force empty endpoint to let Renovate choose with RENOVATE_PLATFORM (or server configuration platform)
-  RENOVATE_PLATFORM: gitlab
 
 renovate-validator:
   rules:

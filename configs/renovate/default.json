@@ -107,6 +107,12 @@
             "groupSlug": "terraform-dependencies"
         },
         {
+            "matchDepTypes": ["devDependencies"],
+            "matchManagers": ["bun", "npm", "pnpm", "yarn"],
+            "groupName": "Node dev dependencies",
+            "groupSlug": "node-dev-dependencies"
+        },
+        {
             "matchManagers": ["bun", "npm", "pnpm", "yarn"],
             "groupName": "Node dependencies",
             "groupSlug": "node-dependencies"

@@ -5,9 +5,10 @@ include:
   # Renovate template
   # https://gitlab.com/to-be-continuous/renovate
   - component: gitlab.com/to-be-continuous/renovate/gitlab-ci-renovate@e7de9ee24ccdfad789dc9b844ea33e38aef141c4 # 1.12.2
-    inputs:
-      config-file: .gitlab/renovate.json
-      endpoint: "" # force empty endpoint to let Renovate choose with RENOVATE_PLATFORM (or server configuration platform)
+
+variables:
+  RENOVATE_CONFIG_FILE: .gitlab/renovate.json
+  RENOVATE_ENDPOINT: "" # force empty endpoint to let Renovate choose with RENOVATE_PLATFORM (or server configuration platform)
 
 renovate-validator:
   rules: [when: never] # validates projects configurations and not server configurations

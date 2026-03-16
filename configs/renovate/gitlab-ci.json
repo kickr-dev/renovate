@@ -54,6 +54,22 @@
                 // ref: <currentValue> (quotes may or may not be there)
                 "project:\\s(?<packageName>\\S+)\\s+ref:\\s['\"]?(?<currentValue>[\\w.+-]+)['\"]?$"
             ]
+        },
+        {
+            "customType": "regex",
+            "datasourceTemplate": "gitlab-tags",
+            "description": "Update 'component' versions in GitLab CI/CD files",
+            "managerFilePatterns": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // component: <registryUrl>/<packageName>/<componentName>@<currentDigest> # <currentValue>
+                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$",
+
+                // component: <registryUrl>/<packageName>/<componentName>@<currentValue>
+                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentValue>[\\w.+-]+)$"
+            ]
         }
     ]
 }

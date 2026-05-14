@@ -33,7 +33,7 @@
             ],
             "matchStrings": [
                 // <text>: <packageName>/<depName>:<currentValue>
-                "\\S+:\\s(?<packageName>\\S+\\/(?<depName>\\S+)):(?<currentValue>[\\w.+-]+)$"
+                "\\S+:\\s(?<packageName>\\S+\\/(?<depName>\\S+)):(?<currentValue>[\\w.+-]+)\n"
             ],
             "versioningTemplate": "docker"
         },
@@ -48,11 +48,11 @@
             "matchStrings": [
                 // project: <packageName>
                 // ref: <currentDigest> # <currentValue>
-                "project:\\s(?<packageName>\\S+)\\s+ref:\\s(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$",
+                "project:\\s(?<packageName>\\S+)\\s+ref:\\s(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\n",
 
                 // project: <packageName>
                 // ref: <currentValue> (quotes may or may not be there)
-                "project:\\s(?<packageName>\\S+)\\s+ref:\\s['\"]?(?<currentValue>[\\w.+-]+)['\"]?$"
+                "project:\\s(?<packageName>\\S+)\\s+ref:\\s['\"]?(?<currentValue>[\\w.+-]+)['\"]?\n"
             ]
         },
         {
@@ -65,10 +65,10 @@
             ],
             "matchStrings": [
                 // component: <registryUrl>/<packageName>/<componentName>@<currentDigest> # <currentValue>
-                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)$",
+                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\n",
 
                 // component: <registryUrl>/<packageName>/<componentName>@<currentValue>
-                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentValue>[\\w.+-]+)$"
+                "component:\\s(?<registryUrl>[^\/]+)\\/(?<packageName>\\S+)\\/(?<componentName>\\S+)@(?<currentValue>[\\w.+-]+)\n"
             ]
         }
     ]

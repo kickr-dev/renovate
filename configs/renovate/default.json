@@ -133,11 +133,11 @@
             "matchStrings": [
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
                 // <text>: <currentValue>
-                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+\\S+:\\s(?<currentValue>[\\w.+-]+)$",
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+\\S+:\\s(?<currentValue>[\\w.+-]+)\n",
 
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
                 // <anything> <text>@<currentValue>
-                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+(?:-\\s)?.+\\s\\S+@(?<currentValue>[\\w.+-]+)$"
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+(?:-\\s)?.+\\s\\S+@(?<currentValue>[\\w.+-]+)\n"
             ]
         }
     ]

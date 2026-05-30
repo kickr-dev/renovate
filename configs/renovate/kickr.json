@@ -12,6 +12,7 @@
                 "/(^|/)action\\.ya?ml$/",
 
                 "/\\.gitlab-ci\\.ya?ml$/",
+                "/\\.gitlab/.+\\.ya?ml$/",
                 "/\\.gitlab/pipelines/.+\\.ya?ml$/",
 
                 "/(^|/)\\.pre-commit-config\\.ya?ml$/"

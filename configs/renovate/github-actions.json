@@ -13,6 +13,7 @@
             "matchDepTypes": ["uses-with"]
         },
         {
+            "matchManagers": ["regex"],
             "matchFileNames": [
                 "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
                 "/(^|/)action\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"

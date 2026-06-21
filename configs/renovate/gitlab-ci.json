@@ -12,8 +12,10 @@
 
     "packageRules": [
         {
+            "matchManagers": ["regex"],
             "matchFileNames": [
                 "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
                 "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "GitLab CI/CD dependencies",

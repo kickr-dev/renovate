@@ -15,6 +15,7 @@ renovate-validator:
 
 renovate-depcheck:
   needs: []
+  timeout: 30 minutes
   rules:
     - if: $RENOVATE_DISABLED == 'true'
       when: never

@@ -5,6 +5,11 @@
 
     "packageRules": [
         {
+            "matchManagers": ["dockerfile"],
+            "groupName": "Dockerfile dependencies",
+            "groupSlug": "dockerfile-dependencies"
+        },
+        {
             "matchManagers": ["regex"], // avoid grouping ENV_ updates with FROM updates
             "matchFileNames": [
                 "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",

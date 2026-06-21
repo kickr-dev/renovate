@@ -34,7 +34,7 @@
             ],
             "matchStrings": [
                 // <text>: <packageName>/<depName>:<currentValue>@sha256:<currentDigest>
-                "\\S+:\\s(?<packageName>\\S+\/(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)@sha256:(?<currentDigest>[\\w.+-]+)\n",
+                "\\S+:\\s(?<packageName>\\S+\/(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)@(?<currentDigest>[\\w.:+-]+)\n",
 
                 // <text>: <packageName>/<depName>:<currentValue>
                 "\\S+:\\s(?<packageName>\\S+\/(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)\n"

@@ -76,6 +76,22 @@
                 // component: <registryUrl>/<packageName>/<componentName>@<currentValue>
                 "component:\\s(?<registryUrl>[^\/]+)\/(?<packageName>\\S+)\/(?<componentName>\\S+)@(?<currentValue>[\\w.+-]+)\n"
             ]
+        },
+        {
+            "customType": "regex",
+            "datasourceTemplate": "gitlab-tags",
+            "description": "Update 'remote' versions in GitLab CI/CD files",
+            "managerFilePatterns": [
+                "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // remote: <registryUrl>/<packageName>/<depName>/-/raw/<currentDigest>/... # <currentValue>
+                "remote:\\s(?<registryUrl>https?:\/\/[^\/]+)\/(?<packageName>\\S+\/(?<depName>\\S+))\/-\/raw\/(?<currentDigest>[\\w.+-]+)\\S+\\s#\\s(?<currentVersion>[\\w.+-]+)\n",
+
+                // remote: <registryUrl>/<packageName>/<depName>/-/raw/<currentValue>/...
+                "remote:\\s(?<registryUrl>https?:\/\/[^\/]+)\/(?<packageName>\\S+\/(?<depName>\\S+))\/-\/raw\/(?<currentValue>[\\w.+-]+)\\S+\n"
+            ]
         }
     ]
 }

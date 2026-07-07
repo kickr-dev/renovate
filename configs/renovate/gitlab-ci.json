@@ -35,11 +35,11 @@
                 "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "matchStrings": [
-                // <text>: <packageName>/<depName>:<currentValue>@sha256:<currentDigest>
-                "\\S+:\\s(?<packageName>\\S+\/(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)@(?<currentDigest>[\\w.:+-]+)\n",
+                // <text>: (<packageName>/)<depName>:<currentValue>@sha256:<currentDigest>
+                "\\S+:\\s(?<packageName>(?:\\S+\/)?(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)@(?<currentDigest>[\\w.:+-]+)\n",
 
-                // <text>: <packageName>/<depName>:<currentValue>
-                "\\S+:\\s(?<packageName>\\S+\/(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)\n"
+                // <text>: (<packageName>/)<depName>:<currentValue>
+                "\\S+:\\s(?<packageName>(?:\\S+\/)?(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)\n"
             ],
             "versioningTemplate": "docker"
         },

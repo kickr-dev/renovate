@@ -5,6 +5,11 @@
 
     "packageRules": [
         {
+            "matchManagers": ["docker-compose"],
+            "groupName": "Docker Compose dependencies",
+            "groupSlug": "docker-compose-dependencies"
+        },
+        {
             "matchManagers": ["dockerfile"],
             "groupName": "Dockerfile dependencies",
             "groupSlug": "dockerfile-dependencies"

@@ -21,6 +21,15 @@
             "groupName": "GitHub Actions dependencies",
             "groupSlug": "github-actions-dependencies",
             "semanticCommitType": "ci"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": [
+                "/\\.github/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "groupName": "Semantic Release dependencies",
+            "groupSlug": "semrel-dependencies",
+            "semanticCommitType": "ci"
         }
     ],
 
@@ -39,6 +48,18 @@
 
                 // uses: <packageName>@<currentValue>
                 "uses:\\s(?<packageName>[^@\\s'\"]+)@(?<currentValue>[\\w.+-]+)\n"
+            ]
+        },
+        {
+            "customType": "regex",
+            "datasourceTemplate": "npm",
+            "description": "Update npm package versions in GitHub semantic-release plugins files",
+            "managerFilePatterns": [
+                "/\\.github/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "matchStrings": [
+                // <packageName>@<currentValue>
+                "(?<packageName>@?\\S+)@(?<currentValue>[\\w.+-]+)\n"
             ]
         }
     ]

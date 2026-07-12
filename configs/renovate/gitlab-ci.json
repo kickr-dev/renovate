@@ -16,11 +16,19 @@
             "matchFileNames": [
                 "/\\.gitlab-ci\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
                 "/\\.gitlab/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
-                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/",
-                "/\\.gitlab/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/"
+                "/\\.gitlab/pipelines/.+\\.ya?ml(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "groupName": "GitLab CI/CD dependencies",
             "groupSlug": "gitlabci-dependencies",
+            "semanticCommitType": "ci"
+        },
+        {
+            "matchManagers": ["regex"],
+            "matchFileNames": [
+                "/\\.gitlab/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/"
+            ],
+            "groupName": "Semantic Release dependencies",
+            "groupSlug": "semrel-dependencies",
             "semanticCommitType": "ci"
         }
     ],
@@ -99,7 +107,7 @@
             "datasourceTemplate": "npm",
             "description": "Update npm package versions in GitLab semantic-release plugins files",
             "managerFilePatterns": [
-                "/\\.gitlab/semrel-plugins\\.txt(?:\\.tmpl)?$/"
+                "/\\.gitlab/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/"
             ],
             "matchStrings": [
                 // <packageName>@<currentValue>

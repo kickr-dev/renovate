@@ -119,6 +119,14 @@
             "groupSlug": "node-dev-dependencies"
         },
         {
+            "matchManagers": ["regex"],
+            "matchFileNames": [
+                "/.*\\.\\w*sh$/"
+            ],
+            "groupName": "Shell dependencies",
+            "groupSlug": "shell-dependencies"
+        },
+        {
             "addLabels": ["major"],
             "matchUpdateTypes": ["major"]
         }

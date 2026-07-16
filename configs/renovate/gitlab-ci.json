@@ -96,7 +96,7 @@
             ],
             "matchStrings": [
                 // remote: <registryUrl>/<packageName>/<depName>/-/raw/<currentDigest>/... # <currentValue>
-                "remote:\\s(?<registryUrl>https?:\/\/[^\/]+)\/(?<packageName>\\S+\/(?<depName>\\S+))\/-\/raw\/(?<currentDigest>[\\w.+-]+)\\S+\\s#\\s(?<currentVersion>[\\w.+-]+)\n",
+                "remote:\\s(?<registryUrl>https?:\/\/[^\/]+)\/(?<packageName>\\S+\/(?<depName>\\S+))\/-\/raw\/(?<currentDigest>[\\w.+-]+)\\S+\\s#\\s(?<currentValue>[\\w.+-]+)\n",
 
                 // remote: <registryUrl>/<packageName>/<depName>/-/raw/<currentValue>/...
                 "remote:\\s(?<registryUrl>https?:\/\/[^\/]+)\/(?<packageName>\\S+\/(?<depName>\\S+))\/-\/raw\/(?<currentValue>[\\w.+-]+)\\S+\n"

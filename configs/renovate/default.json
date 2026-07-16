@@ -140,6 +140,22 @@
                 // <anything> <text>@<currentValue>
                 "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+(?:-\\s)?.+\\s\\S+@(?<currentValue>[\\w.+-]+)\n"
             ]
+        },
+        {
+            "customType": "regex",
+            "description": "Update any version in *.*sh files",
+            "managerFilePatterns": [
+                "/.*\\.\\w*sh$/"
+            ],
+            "matchStrings": [
+                // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
+                // <text>_version=<currentDigest> # <currentValue>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+\\S+_version=(?<currentDigest>[\\w.+-]+)\\s#\\s(?<currentValue>[\\w.+-]+)\n",
+
+                // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)
+                // <text>_version=<currentValue>
+                "renovate:\\sdatasource=(?<datasource>\\S+)\\spackageName=(?<packageName>\\S+)(?:\\sdepName=(?<depName>\\S+))?(?:\\sversioning=(?<versioning>\\S+))?\\s+\\S+_version=(?<currentValue>[\\w.+-]+)\n"
+            ]
         }
     ]
 }

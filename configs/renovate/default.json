@@ -121,7 +121,7 @@
         {
             "matchManagers": ["regex"],
             "matchFileNames": [
-                "/.*\\.\\w*sh$/"
+                "/.*\\.\\w*sh.*$/"
             ],
             "groupName": "Shell dependencies",
             "groupSlug": "shell-dependencies"
@@ -153,7 +153,7 @@
             "customType": "regex",
             "description": "Update any version in *.*sh files",
             "managerFilePatterns": [
-                "/.*\\.\\w*sh$/"
+                "/.*\\.\\w*sh.*$/"
             ],
             "matchStrings": [
                 // renovate: datasource=<datasource> packageName=<packageName> (depName=<depName>, i.e. optional) (versioning=<versioning>, i.e. optional)

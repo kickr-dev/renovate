@@ -43,6 +43,7 @@
     "bbUseDefaultReviewers": true,
     "gitLabIgnoreApprovals": true,
     "reviewersFromCodeOwners": true,
+    "filterUnavailableUsers": true,
 
     "assignAutomerge": true,
     "automerge": false,
@@ -50,6 +51,7 @@
     "automergeType": "pr",
     "platformAutomerge": true,
 
+    "keepUpdatedLabel": "auto-rebase",
     "rebaseLabel": "rebase",
     "stopUpdatingLabel": "pause",
 

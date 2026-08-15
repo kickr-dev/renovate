@@ -10,12 +10,12 @@
             "matchFileNames": [
                 "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
                 "/(^|/)action\\.ya?ml$/",
-                "/\\.github/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.github/semrel-plugins\\.txt$/",
 
                 "/\\.gitlab-ci\\.ya?ml$/",
                 "/\\.gitlab/.+\\.ya?ml$/",
                 "/\\.gitlab/pipelines/.+\\.ya?ml$/",
-                "/\\.gitlab/semrel-plugins\\.txt(?:\\.part)?(?:\\.tmpl)?$/",
+                "/\\.gitlab/semrel-plugins\\.txt$/",
 
                 "/(^|/)\\.pre-commit-config\\.ya?ml$/"
             ]

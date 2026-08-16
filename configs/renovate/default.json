@@ -121,6 +121,11 @@
             "groupSlug": "node-dev-dependencies"
         },
         {
+            "matchDepTypes": ["peerDependencies"],
+            "matchManagers": ["bun", "npm", "pnpm", "yarn"],
+            "enabled": false
+        },
+        {
             "matchManagers": ["regex"],
             "matchFileNames": [
                 "/.*\\.\\w*sh.*$/"

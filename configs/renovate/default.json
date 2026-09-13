@@ -71,6 +71,9 @@
     "digest": {
         "enabled": false
     },
+    "major": {
+        "minimumReleaseAge": "30d"
+    },
 
     "packageRules": [
         {

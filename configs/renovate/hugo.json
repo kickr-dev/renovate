@@ -1,0 +1,33 @@
+// https://docs.renovatebot.com/configuration-options/
+
+// Parameterized preset: {{arg0}} lists the go.mod paths of the Hugo sites, relative to the repository root and separated by '|' (e.g. go.mod|docs/go.mod).
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "packageRules": [
+        {
+            "enabled": true,
+            "matchDepTypes": ["indirect"], // enable hugo themes updates
+            "matchFileNames": ["/^({{arg0}})$/"],
+            "matchManagers": ["gomod"]
+        },
+        {
+            "matchFileNames": ["/^({{arg0}})$/"],
+            "matchManagers": ["gomod"],
+            "matchUpdateTypes": ["!major"],
+            "groupName": "Hugo dependencies",
+            "groupSlug": "hugo-dependencies"
+        },
+        {
+            "matchFileNames": ["/^({{arg0}})$/"],
+            "matchManagers": ["gomod"],
+            "postUpdateOptions": ["gomodUpdateImportPaths"], // no gomodTidy, go mod tidy strips themes
+            "postUpgradeTasks": {
+                "commands": ["hugo mod tidy"], // prefer hugo tidying to keep imported themes
+                "executionMode": "update",
+                "workingDirTemplate": "{{{packageFileDir}}}"
+            }
+        }
+    ]
+}

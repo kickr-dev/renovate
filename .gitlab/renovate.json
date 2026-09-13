@@ -4,7 +4,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-global-schema.json",
 
     "allowedCommands": [
-        "^\\./scripts/sh/renovate\\.sh$"
+        "^\\./scripts/sh/renovate\\.sh$",
+        "^hugo mod tidy$"
     ],
     "autodiscover": true,
     "autodiscoverNamespaces": ["kickr-dev"],

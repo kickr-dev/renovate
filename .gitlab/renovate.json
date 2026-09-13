@@ -5,6 +5,7 @@
 
     "allowedCommands": [
         "^\\./scripts/sh/renovate\\.sh$",
+        "^go mod tidy$",
         "^hugo mod tidy$"
     ],
     "autodiscover": true,

@@ -22,9 +22,8 @@
         {
             "matchFileNames": ["/^({{arg0}})$/"],
             "matchManagers": ["gomod"],
-            "postUpdateOptions": ["gomodUpdateImportPaths"], // no gomodTidy, go mod tidy strips themes
             "postUpgradeTasks": {
-                "commands": ["hugo mod tidy"], // prefer hugo tidying to keep imported themes
+                "commands": ["hugo mod tidy"], // replaces gomod.json's go mod tidy, which strips themes
                 "executionMode": "update",
                 "workingDirTemplate": "{{{packageFileDir}}}"
             }

@@ -4,12 +4,17 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
     "goGetDirs": ["./..."],
-    "postUpdateOptions": [
-        "gomodTidy",
-        "gomodUpdateImportPaths"
-    ],
+    "postUpdateOptions": ["gomodUpdateImportPaths"],
 
     "packageRules": [
+        {
+            "matchManagers": ["gomod"],
+            "postUpgradeTasks": {
+                "commands": ["go mod tidy"], // use manual go mod tidy to get the override when using hugo.json
+                "executionMode": "update",
+                "workingDirTemplate": "{{{packageFileDir}}}"
+            }
+        },
         {
             // block all updates on "go" directive in go.mod (but not "toolchain" directive)
             "enabled": false,

@@ -5,6 +5,7 @@
 
     "allowedCommands": [
         "^\\./scripts/sh/renovate\\.sh$",
+        "^git diff --exit-code -G\\^go -- go\\.mod$",
         "^go mod tidy$",
         "^hugo mod tidy$"
     ],

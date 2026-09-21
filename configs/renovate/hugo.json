@@ -13,6 +13,7 @@
             "matchManagers": ["gomod"]
         },
         {
+            "automerge": true,
             "matchFileNames": ["/^({{arg0}})$/"],
             "matchManagers": ["gomod"],
             "matchUpdateTypes": ["!major"],

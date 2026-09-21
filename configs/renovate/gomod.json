@@ -10,7 +10,12 @@
         {
             "matchManagers": ["gomod"],
             "postUpgradeTasks": {
-                "commands": ["go mod tidy"], // use manual go mod tidy to get the override when using hugo.json
+                "commands": [
+                    // use manual go mod tidy to get the override when using hugo.json
+                    "go mod tidy",
+                    // fail when a dependency forced a go directive bump: the artifact error fails the CI pipeline, so GitLab cancels auto-merge.
+                    "git diff --exit-code -G^go -- go.mod"
+                ],
                 "executionMode": "update",
                 "workingDirTemplate": "{{{packageFileDir}}}"
             }
@@ -23,6 +28,7 @@
             "matchManagers": ["gomod"]
         },
         {
+            "automerge": true,
             // force grouping of go.mod minor versions, even for pre-1.0 versions
             "matchManagers": ["gomod"],
             "matchUpdateTypes": ["!major"],
@@ -36,6 +42,13 @@
             "groupName": "Go toolchain dependency",
             "groupSlug": "toolchain-dependency",
             "semanticCommitType": "ci"
+        },
+        {
+            "automerge": true,
+            "matchDepNames": ["go"],
+            "matchDepTypes": ["toolchain"],
+            "matchManagers": ["gomod"],
+            "matchUpdateTypes": ["!major"]
         }
     ]
 }

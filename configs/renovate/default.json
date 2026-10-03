@@ -23,7 +23,7 @@
     "prCreation": "immediate",
 
     "dependencyDashboard": false,
-    "osvVulnerabilityAlerts": false, // https://github.com/renovatebot/renovate/discussions/20542
+    "osvVulnerabilityAlerts": true, // https://github.com/renovatebot/renovate/discussions/20542
     "forkProcessing": "disabled",
 
     "minimumReleaseAge": "5 days",
@@ -70,6 +70,9 @@
 
     "digest": {
         "enabled": false
+    },
+    "lockFileMaintenance": {
+        "enabled": true
     },
     "major": {
         "minimumReleaseAge": "30d"

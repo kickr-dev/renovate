@@ -22,7 +22,7 @@
     "branchConcurrentLimit": 0,
     "prCreation": "immediate",
 
-    "dependencyDashboard": false,
+    "dependencyDashboard": true,
     "osvVulnerabilityAlerts": true, // https://github.com/renovatebot/renovate/discussions/20542
     "forkProcessing": "disabled",
 

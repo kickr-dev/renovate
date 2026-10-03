@@ -110,11 +110,6 @@
             "groupSlug": "kubernetes-dependencies"
         },
         {
-            "matchCategories": ["terraform"],
-            "groupName": "Terraform dependencies",
-            "groupSlug": "terraform-dependencies"
-        },
-        {
             "matchDepTypes": ["!devDependencies"],
             "matchManagers": ["bun", "npm", "pnpm", "yarn"],
             "groupName": "Node dependencies",

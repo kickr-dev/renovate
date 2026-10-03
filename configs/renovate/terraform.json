@@ -1,0 +1,53 @@
+// https://docs.renovatebot.com/configuration-options/
+
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+    "packageRules": [
+        {
+            // disable range updates except major ones
+            "enabled": false,
+            "matchCurrentValue": "/[!<>~,]/",
+            "matchManagers": ["terraform"],
+            "matchUpdateTypes": ["!major"]
+        },
+        {
+            "enabled": false,
+            "matchDepTypes": ["required_version"],
+            "matchManagers": ["terraform"]
+        },
+        {
+            "matchDatasources": ["terraform-provider", "terraform-module"],
+            "semanticCommitType": "chore"
+        },
+        // {
+        //     "matchDatasources": ["terraform-provider", "terraform-module"],
+        //     "registryUrls": ["https://registry.opentofu.org"],
+        //     "semanticCommitType": "chore"
+        // },
+        {
+            "matchCategories": ["terraform"],
+            "groupName": "Terraform dependencies",
+            "groupSlug": "terraform-dependencies"
+        }
+    ],
+
+    "customManagers": [
+        {
+            "customType": "regex",
+            "description": "Update docker image references in Terraform/OpenTofu files",
+            "managerFilePatterns": [
+                "/(^|/)[^/]+\\.(?:tf|tofu)$/"
+            ],
+            "matchStrings": [
+                // renovate: datasource=<datasource> (versioning=<versioning>, i.e. optional)
+                // <variable_name> = "(<packageName>/)<depName>:<currentValue>@<currentDigest>"
+                "renovate:\\sdatasource=(?<datasource>\\S+)(?:\\sversioning=(?<versioning>\\S+))?\\s+\\w+\\s*=\\s*\"(?<packageName>(?:\\S+\/)?(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)@(?<currentDigest>[\\w.:+-]+)\"\n",
+
+                // renovate: datasource=<datasource> (versioning=<versioning>, i.e. optional)
+                // <variable_name> = "(<packageName>/)<depName>:<currentValue>"
+                "renovate:\\sdatasource=(?<datasource>\\S+)(?:\\sversioning=(?<versioning>\\S+))?\\s+\\w+\\s*=\\s*\"(?<packageName>(?:\\S+\/)?(?<depName>[^:]+)):(?<currentValue>[\\w.+-]+)\"\n"
+            ]
+        }
+    ]
+}

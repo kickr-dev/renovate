@@ -19,20 +19,6 @@ include:
 # secret variables
 # (define the variables below in your GitLab group/project variables)
 
-# https://gitlab.com/to-be-continuous/semantic-release
-# RELEASE_TOKEN: A GitLab 'service account token', 'group access token', 'project access token' or 'personal access token' with `api`
-# and `write_repository` scopes and at least a `Developer` role,
-# or a 'fine-grained personal access token' with the following permissions on this project:
-#   - Code: Download, Push
-#   - Commit merge request: Read
-#   - Issue note: Create
-#   - Markdown upload: Create
-#   - Merge request closes issue: Read
-#   - Merge request note: Create
-#   - Project: Read
-#   - Release: Create
-# SEMREL_GPG_SIGNKEY: Path to the GPG signkey exported with `gpg --armor --export-secret-key` (optional).
-
 # https://gitlab.com/to-be-continuous/renovate
 # Don't forget to setup a scheduled pipeline every once in a while to run Renovate updates checks.
 # RENOVATE_TOKEN: A GitLab 'service account token', 'group access token', 'project access token' or 'personal access token' with `api`, `read_user`
@@ -60,7 +46,6 @@ include:
 # or a 'fine-grained personal access token' with the following permissions on this project and its parent groups:
 #   - Approval configuration: Read
 #   - Approval rule: Read
-#   - Badge: Create, Read, Update
 #   - Branch: Read
 #   - Commit: Read
 #   - Group: Read

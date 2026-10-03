@@ -7,7 +7,6 @@ gitlab:
   options:
     - kickr
     - renovate
-  release: {}
 license: mit
 maintainers:
   - name: u.kilianpaquier

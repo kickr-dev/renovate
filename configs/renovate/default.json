@@ -39,11 +39,11 @@
         "/^v[0-9]+\\.[0-9]+\\.x$/"
     ],
 
-    "assigneesFromCodeOwners": true,
     "bbUseDefaultReviewers": true,
+    "filterUnavailableUsers": true,
     "gitLabIgnoreApprovals": true,
     "reviewersFromCodeOwners": true,
-    "filterUnavailableUsers": true,
+    "reviewersSampleSize": 2,
 
     "assignAutomerge": true,
     "automerge": false,

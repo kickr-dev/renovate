@@ -4,7 +4,10 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
     "goGetDirs": ["./..."],
-    "postUpdateOptions": ["gomodUpdateImportPaths"],
+    "postUpdateOptions": [
+        "goGenerate",
+        "gomodUpdateImportPaths"
+    ],
 
     "packageRules": [
         {

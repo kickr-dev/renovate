@@ -57,7 +57,7 @@ Options set in the repository itself take precedence over the extended presets.
 | [docker](./configs/renovate/docker.json)                 | Groups Docker updates and tracks `ENV` versions in Dockerfiles                       |
 | [github-actions](./configs/renovate/github-actions.json) | Tracks `uses` versions and semantic-release plugins in GitHub Actions files          |
 | [gitlab-ci](./configs/renovate/gitlab-ci.json)           | Tracks images, `ref`, `component` and `remote` versions in GitLab CI/CD files        |
-| [gomod](./configs/renovate/gomod.json)                   | Go modules grouping, `go mod tidy` and automerge, without `go` directive bumps       |
+| [gomod](./configs/renovate/gomod.json)                   | Go modules grouping, tidy, `go generate` and automerge, without `go` directive bumps |
 | [hugo](./configs/renovate/hugo.json)                     | Hugo modules and themes updates, with `hugo mod tidy`                                |
 | [kickr](./configs/renovate/kickr.json)                   | Disables regex managers on files templated by `kickr`                                |
 | [pre-commit](./configs/renovate/pre-commit.json)         | Groups pre-commit updates and tracks `rev` versions in template files                |
